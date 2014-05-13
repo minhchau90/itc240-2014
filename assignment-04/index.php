@@ -1,26 +1,34 @@
 <?php
-
 //include but dont show my password
 include ("passwords.php");
 
-
-//connects to database
+//to database
 $myNewSQL = new mysqli("localhost", "cnguye63", $mysql_password, "cnguye63");
 
-$result = $MyNewSQL->query('SELECT * FROM Spring ORDER BY type ASC;');
+$result = $myNewSQL->query('SELECT * FROM Spring;');
+$resultbyPrice = $myNewSQL->query('SELECT * FROM Spring ORDER BY price;');
+
 ?>
 
-
-<table>
+<table width="500" border="1">
+<tr>
+    <td>TYPE</td>
+    <td>NAME</td>
+    <td>PRICE</td>
+    <td>CONDITION</td>
+    <td>ID</td>
+  </tr>
 <?php
-foreach ($result as $row) {
+foreach ($result as $col) {
 ?>
+	
 	<tr>
-		<td><?= $row["type"] ?>
-		<td><?= $row["name"] ?>
-		<td><?= $row["price"] ?>
-		<td><?= $row["conditions"] ?>
-		<td><?= $row["id"] ?>
+
+		<td><?= $col["type"] ?>
+		<td><?= $col["name"] ?>
+		<td><?= $col["price"] ?>
+		<td><?= $col["conditions"] ?>
+		<td><?= $col["id"] ?>
 <?php
 }
 ?>
