@@ -5,8 +5,8 @@ include ("passwords.php");
 //to database
 $myNewSQL = new mysqli("localhost", "cnguye63", $mysql_password, "cnguye63");
 
-$result = $myNewSQL->query('SELECT * FROM Spring;');
-$resultbyPrice = $myNewSQL->query('SELECT * FROM Spring ORDER BY price;');
+$result = $myNewSQL->query('SELECT * FROM Spring ORDER BY price;');
+
 
 ?>
 
