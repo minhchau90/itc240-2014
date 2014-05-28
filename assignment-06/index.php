@@ -37,5 +37,11 @@
 			Your total calorie input is:
 			<?= $sum["sum"] ?>
 		</div>
+	
+	Your highest number of calories burned is 		
+			<?= htmlentities($row["calories"]) ?>
+			in
+			<?= htmlentities($row["type"]) ?>.
+		</div>
 	</body>
 </html>
