@@ -5,7 +5,7 @@ class Bus {
   public $exploded = false;
   public $speed = 20;
   
-  function setSpeed($mph) {
+function setSpeed($mph) {
   $this->speed = $mph;
     
   if ($mph <= 50 && $this->armed == false) {
@@ -21,14 +21,15 @@ class Bus {
   $this->exploded = true;
 	echo "You're going back to under 50mph now but ooops too late! BOOM!!!.". "<br>";
   }
+  return $this->speed;
 }
   
-  function trigger() {
+function trigger() {
     $this->exploded = true;
 	echo "BOOM!!!!". "<br>";
   }
 
-  function getSpeed() {
+function getSpeed() {
     $this->speed;
 	echo "Your current speed is now back to 20mph.";
   }
